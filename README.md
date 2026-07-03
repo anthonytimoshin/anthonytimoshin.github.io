@@ -1,1 +1,1 @@
-# website
+# PWA for AuroraOS
