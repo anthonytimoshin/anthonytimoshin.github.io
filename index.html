@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html>
+
     <head>
+        <title>HelloWorld!</title>
         <meta charset="utf-8">
-        <base href="content/">
-        <title>Документ HTML5</title>
-        <meta name="description" content="Первая HTML5 страница">
-        <meta name="author" content="Тимошин Антон">
+        <meta name="description" content="PWA HelloWorld Project">
+        <meta name="author" content="Timoshin Anton">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="manifest" href="manifest.json">
     </head>
+
     <body>
-        <div>
-            <a href="newpage.html">Содержание документа HTML5</a>
-        </div>
-        <div>Первая строка <br/> Вторая строка</div>
-        <div>
-            <h1><p>Первый параграф</p></h1>
-            <p><span style="color: aquamarine;">Второй параграф</span>вот так вот</p>
-            <h6><span style="color: brown;">Тест</span></h6>
-        </div>
+        <h1>Hello OMP!</h1>
     </body>
+
+    <style>
+        html, body {
+            background-color: whitesmoke;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+    </style>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registered:', reg.scope))
+                .catch(err => console.error('Error SW:', err));
+            });
+        }
+    </script>
+
 </html>
